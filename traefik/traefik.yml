@@ -1,0 +1,4 @@
+experimental:
+  localPlugins:
+    maintenance:
+      moduleName: github.com/programic/traefik-maintenance-plugin

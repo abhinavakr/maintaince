@@ -1,0 +1,17 @@
+http:
+  middlewares:
+    maintenance:
+      plugin:
+        maintenance:
+          informUrl: "http://20.84.40.29/inform/inform.json"  # Use your Azure machine IP here
+          informInterval: 5
+          informTimeout: 3
+
+  routers:
+    nginx:
+      entryPoints:
+        - web
+      rule: "Host(`nginx.test`)"  # Ensure this hostname is resolvable
+      middlewares:
+        - maintenance
+      service: nginx
